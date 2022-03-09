@@ -15,7 +15,7 @@ const App = () => {
   const [allWaves, setAllWaves] = useState([]);
   console.log("currentAccount: ", currentAccount);
   /* デプロイされたコントラクトのアドレスを保持する変数を作成 */
-  const contractAddress = "0xb1B7Af6F0f08e614d579340963EdC8Db2c89EbFC";
+  const contractAddress = "0x89C1c80954c2b120e487b3A9f6DD500eD6428D55";
   /* コントラクトからすべてのwavesを取得するメソッドを作成 */
   /* ABIの内容を参照する変数を作成 */
   const contractABI = abi.abi;
@@ -177,25 +177,23 @@ const App = () => {
         <div className="header">
         <span role="img" aria-label="hand-wave">👋</span> WELCOME!
         </div>
-        <div className="bio">
-          イーサリアムウォレットを接続して、メッセージを作成したら、<span role="img" aria-label="hand-wave">👋</span>を送ってください<span role="img" aria-label="shine">✨</span>
-        </div>
-        <br></br>
-        {/* ウォレットコネクトのボタンを実装 */}
+        {!currentAccount && (<div className="bio">
+          Please connect your Metamask<span role="img" aria-label="shine">&#129418;</span>
+        </div>)}
         {!currentAccount && (
-        <button className="waveButton" onClick={connectWallet} >
-            Connect Wallet
+        <button className="btn btn-gradient" onClick={connectWallet}>
+          <span>Connect Wallet</span>
         </button>
         )}
-        {currentAccount && (
-        <button className="waveButton">
-            Wallet Connected
-        </button>
-        )}
+
+
         {/* waveボタンにwave関数を連動 */}
+        {currentAccount && (<div className="bio">
+          Please send message!!<span role="img" aria-label="shine">&#129418;</span>
+        </div>)}
         {currentAccount && (
-        <button className="waveButton" onClick={wave}>
-          Wave at Me
+        <button className="btn btn-gradient" onClick={wave}>
+          <span>Wave at Me</span>
         </button>)
         }
         {/* メッセージボックスを実装*/}

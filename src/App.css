@@ -1,8 +1,13 @@
+@import url('https://fonts.google.com/specimen/Roboto+Mono?selection.family=Roboto#standard-styles');
+
+
 .mainContainer {
   display: flex;
+  font-family: 'Roboto';
   justify-content: center;
   width: 100%;
-  margin-top: 64px;
+  height: 100vh;
+  background-color: rgb(10, 18, 40);
 }
 
 .dataContainer {
@@ -14,6 +19,7 @@
 
 .header {
   text-align: center;
+  color: rgb(220, 220, 239);
   font-size: 32px;
   font-weight: 600;
 }
@@ -31,4 +37,98 @@
   border: 0;
   border-radius: 5px;
   
+}
+
+.waveButton_before {
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 16px;
+  border: 0;
+  border-radius: 7px;
+  
+}
+
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+}
+
+.btn-gradient {
+  font-weight: normal;
+
+  color: #fff;
+  border-radius: 4px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(40%, #ff3cac),
+    to(#562b7c)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac 40%, #562b7c 100%);
+  background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+}
+
+.btn-gradient:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3cac),
+    color-stop(#562b7c),
+    to(#2b86c5)
+  );
+
+  background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
+
+  background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+}
+
+.btn-gradient span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-gradient:hover {
+  color: #fff;
+}
+
+.btn-gradient:hover:after {
+  opacity: 0;
 }
